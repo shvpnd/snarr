@@ -1,0 +1,200 @@
+@font-face {
+    font-family: 'Bold';
+    src: url('./font/Degular-Bold.otf') format('opentype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Medium';
+    src: url('./font/Degular-Medium.otf') format('opentype');
+    font-weight: bold;
+}
+
+body {
+    font-family: 'Medium', sans-serif;
+    background-image: url('./bg/1.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.settings-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.pomodoro {
+    width: 90%;
+    max-width: 600px; 
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.timer {
+    font-family: 'Bold', sans-serif;
+    font-size: 150px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.controls button {
+    padding: 12px 40px;
+    margin: 5px;
+    border: none;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: #583119;
+    font-family: "Medium";
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    right: 20px;
+    top: 20px;
+    width: 90%; 
+    max-width: 300px; 
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.close {
+    color: #ffffff;
+    position: absolute;
+    top: -20px;
+    right: -12px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.modal-sidebar {
+    width: 30%;
+    padding: 10px;
+    border-right: 1px solid #ffffff36;
+}
+
+.modal-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.modal-sidebar li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.modal-sidebar li:hover {
+    background-color: rgba(0, 0, 0, 0.204);
+    border-radius: 10px;
+}
+
+.modal-main {
+    width: 70%;
+    padding: 10px;
+}
+
+.settings-category {
+    display: none;
+}
+
+.settings-category strong {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.settings-category h3 {
+    margin-top: 0;
+}
+
+.spotify-widget {
+    position: fixed; 
+    bottom: 20px; 
+    left: 20px; 
+    z-index: 1000; 
+    text-align: center; 
+    border-radius: 10px; 
+    width: calc(100% - 40px); 
+    max-width: 375px; 
+    transform: scale(0.85); 
+    transform-origin: bottom left; 
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #505050;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb,
+input[type="range"]::-ms-thumb {
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #505050;
+    border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+    background: #505050;
+}
+
+input[type="range"]::-ms-track {
+    background: #505050;
+    border-radius: 5px;
+    height: 8px;
+}
+
+input[type="range"]::-moz-range-progress {
+    background: #583119;
+    border-radius: 5px;
+    height: 8px;
+}
+
+input[type="range"]::-ms-fill-lower {
+    background: #583119;
+    border-radius: 5px;
+    height: 8px;
+}
+
+input[type="range"]::-ms-fill-upper {
+    background: #505050; 
+}
+
+input[type="range"]:hover {
+    background: #505050; 
+}
