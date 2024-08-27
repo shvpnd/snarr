@@ -12,7 +12,7 @@
 
 body {
     font-family: 'Medium', sans-serif;
-    background-image: url('./bg/1.jpg'); 
+    background-image: url('2.jpg'); 
     background-size: cover;
     background-position: center;
     color: #ffffff;
@@ -23,6 +23,68 @@ body {
     align-items: center;
     height: 100vh;
     position: relative;
+}
+
+/* Prevent text selection */
+body {
+    user-select: none; /* Non-selectable text */
+}
+
+/* Prevent dragging of images and other elements */
+img {
+    pointer-events: none; /* Prevent dragging of images */
+}
+
+/* Prevent dragging of all elements */
+* {
+    -webkit-user-drag: none; /* For WebKit browsers (Chrome, Safari) */
+    -moz-user-drag: none; /* For Firefox */
+    -o-user-drag: none; /* For Opera */
+    user-drag: none; /* Standard */
+}
+
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.322); /* Adjust the alpha value for dimming */
+    z-index: 0; /* Ensure it is below all other content */
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(8, 8, 8); /* Background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it is above all other content */
+}
+
+.loading-logo {
+    width: 150px; /* Adjust the size of the logo as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.content {
+    display: none; /* Hide the main content initially */
+}
+
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 250px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 10;
 }
 
 .settings-icon {
@@ -46,13 +108,13 @@ body {
     font-family: 'Bold', sans-serif;
     font-size: 150px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 0px; /* Reduced margin to decrease gap */
     cursor: pointer;
 }
 
 .controls button {
     padding: 12px 40px;
-    margin: 5px;
+    margin: 0px 0; /* Adjusted margin to reduce gap */
     border: none;
     border-radius: 15px;
     color: #ffffff;
@@ -61,6 +123,7 @@ body {
     cursor: pointer;
     font-size: 16px;
 }
+
 
 .modal {
     display: none;

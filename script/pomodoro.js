@@ -40,7 +40,7 @@ const updateDisplay = () => {
 };
 
 const updateResetButtonText = () => {
-    elements.resetButton.textContent = isBreakTime ? "Break" : "Work";
+    elements.resetButton.textContent = isBreakTime ? "Break Time" : "Work Time";
 };
 
 const updateTimer = () => {

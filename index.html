@@ -7,61 +7,69 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="settings-icon" id="settingsIcon">⛭</div>
-    <div class="pomodoro">
-        <div id="timer" class="timer"> 
-            <span id="minutes">25</span>:<span id="seconds">00</span>
-        </div>
-        <div class="controls">
-            <button id="reset">Reset</button>
-        </div>
+    <div class="loading-overlay">
+        <img src="logo_resp.png" alt="Loading..." class="loading-logo">
     </div>
-    <div class="spotify-widget">
-        <iframe style="border-radius:15px" src="https://open.spotify.com/embed/playlist/1xVQZjNBLeHGCLfT3Ngfrk?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
-    <div class="modal" id="settingsModal">
-        <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
-            <div class="modal-sidebar">
-                <ul>
-                    <li data-category="pomodoro">Pomodoro</li>
-                    <li data-category="theme">Theme</li>
-                    <li data-category="sounds">Sounds</li>
-                    <li data-category="music">Music</li>
-                    <li data-category="feedback">Feedback & Support</li>
-                </ul>
+    <div class="content">
+        <!-- Your existing content goes here -->
+        <img src="logo.png" alt="Logo" class="logo">
+        <div class="settings-icon" id="settingsIcon">⛭</div>
+        <div class="pomodoro">
+            <div id="timer" class="timer"> 
+                <span id="minutes">25</span>:<span id="seconds">00</span>
             </div>
-            <div class="modal-main">
-                <div class="settings-category" id="pomodoro">
-                    <strong>Pomodoro Settings</strong>
-                    <label for="pomodoroDuration">Pomodoro Duration (minutes):</label>
-                    <input type="range" id="pomodoroDuration" min="1" max="60" value="25" step="1">
-                    <span id="pomodoroValue">25 minutes</span>
-                    <label for="breakDuration">Break Duration (minutes):</label>
-                    <input type="range" id="breakDuration" min="1" max="30" value="5" step="1">
-                    <span id="breakValue">5 minutes</span>
-                </div>
-                <div class="settings-category" id="themes">
-                    <h3>Select Theme</h3>
-                    <p>Theme selection is currently disabled.</p>
-                </div>
-                <div class="settings-category" id="sounds" style="display: none;">
-                    <strong>Sound Settings</strong>
-                    <label for="soundVolume">Volume:</label>
-                    <input type="range" id="soundVolume" min="0" max="100" value="50">
-                </div>
-                <div class="settings-category" id="music" style="display: none;">
-                    <strong>Music Settings</strong>
-                    <p>Manage your music preferences here.</p>
-                </div>
-                <div class="settings-category" id="feedback" style="display: none;">
-                    <strong>Feedback & Support</strong>
-                    <p>Contact us for support or feedback.</p>
-                </div>
+            <div class="controls">
+                <button id="reset">Reset</button>
             </div>
-        </div>               
+        </div>
+        <div class="spotify-widget">
+            <iframe style="border-radius:15px" src="https://open.spotify.com/embed/playlist/1xVQZjNBLeHGCLfT3Ngfrk?utm_source=generator&theme=black" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        <div class="modal" id="settingsModal">
+            <div class="modal-content">
+                <span class="close" id="closeModal">&times;</span>
+                <div class="modal-sidebar">
+                    <ul>
+                        <li data-category="pomodoro">Pomodoro</li>
+                        <li data-category="theme">Theme</li>
+                        <li data-category="sounds">Sounds</li>
+                        <li data-category="music">Music</li>
+                        <li data-category="feedback">Feedback & Support</li>
+                    </ul>
+                </div>
+                <div class="modal-main">
+                    <div class="settings-category" id="pomodoro">
+                        <strong>Pomodoro Settings</strong>
+                        <label for="pomodoroDuration">Pomodoro Duration (minutes):</label>
+                        <input type="range" id="pomodoroDuration" min="1" max="60" value="25" step="1">
+                        <span id="pomodoroValue">25 minutes</span>
+                        <label for="breakDuration">Break Duration (minutes):</label>
+                        <input type="range" id="breakDuration" min="1" max="30" value="5" step="1">
+                        <span id="breakValue">5 minutes</span>
+                    </div>
+                    <div class="settings-category" id="themes">
+                        <h3>Select Theme</h3>
+                        <p>Theme selection is currently disabled.</p>
+                    </div>
+                    <div class="settings-category" id="sounds" style="display: none;">
+                        <strong>Sound Settings</strong>
+                        <label for="soundVolume">Volume:</label>
+                        <input type="range" id="soundVolume" min="0" max="100" value="50">
+                    </div>
+                    <div class="settings-category" id="music" style="display: none;">
+                        <strong>Music Settings</strong>
+                        <p>Manage your music preferences here.</p>
+                    </div>
+                    <div class="settings-category" id="feedback" style="display: none;">
+                        <strong>Feedback & Support</strong>
+                        <p>Contact us for support or feedback.</p>
+                    </div>
+                </div>
+            </div>               
+        </div>
+        <script src="script/main.js"></script>
+        <script src="script/pomodoro.js"></script>
     </div>
-    <script src="script/main.js"></script>
-    <script src="script/pomodoro.js"></script>
 </body>
+
 </html>
