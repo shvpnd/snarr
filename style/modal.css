@@ -1,0 +1,164 @@
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    z-index: 1000;
+    right: 20px;
+    top: 20px;
+    width: 90%; 
+    max-width: 400px; /* Increased max width for the modal */
+    max-height: 50vh; /* Set a maximum height for the modal */
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 15px;
+    padding: 0; /* Remove padding to manage internal spacing */
+    backdrop-filter: blur(10px);
+    overflow: hidden; /* Hide overflow to manage scrolling */
+}
+
+.modal-content {
+    display: flex;
+    height: 100%; /* Ensure the content takes full height */
+}
+
+.close {
+    display: flex; /* Use flexbox to center the icon */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 20px; /* Set width for the square box */
+    height: 20px; /* Set height for the square box */
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    border-radius: 5px; /* Make it circular */
+    color: #ffffff; /* Icon color */
+    font-size: 24px; /* Icon size */
+    cursor: pointer; /* Pointer cursor on hover */
+    position: absolute; /* Position it absolutely within the modal */
+    top: 10px; /* Position from the top */
+    right: 10px; /* Position from the right */
+    z-index: 10; /* Ensure it is above other content */
+}
+
+
+.modal-sidebar {
+    width: 30%;
+    padding: 10px;
+    border-right: 1px solid #ffffff36;
+    position: sticky; /* Make the sidebar sticky */
+    top: 0; /* Stick to the top of the modal */
+    height: calc(100vh - 40px); /* Full height of the modal minus padding */
+    overflow-y: auto; /* Allow scrolling if needed */
+}
+
+.modal-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.modal-sidebar li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.modal-sidebar li:hover {
+    background-color: rgba(0, 0, 0, 0.204); /* Light hover effect */
+    border-radius: 10px;
+}
+
+.modal-sidebar li.selected {
+    background-color: rgba(0, 0, 0, 0.423); /* Darker background for selected category */
+    border-radius: 10px;
+}
+
+.modal-main {
+    width: 70%;
+    padding: 10px;
+    overflow-y: auto; /* Allow scrolling in the main content */
+    max-height: calc(50vh - 40px); /* Ensure it doesn't exceed the modal height */
+}
+
+.settings-category {
+    display: none; /* Initially hidden */
+}
+
+.settings-category strong {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.settings-category h3 {
+    margin-top: 0;
+}
+
+.background-thumbnails {
+    display: grid; /* Use grid layout for thumbnails */
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 10px; /* Space between thumbnails */
+    max-height: 80vh; /* Set a max height for the thumbnails container */
+}
+
+.thumbnail {
+    width: 100%; /* Full width of the grid cell */
+    height: 60px; /* Thumbnail height for landscape */
+    object-fit: cover; /* Maintain aspect ratio */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: transform 0.1s; /* Smooth zoom transition */
+}
+
+.thumbnail:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Range input styles remain unchanged */
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #505050;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb,
+input[type="range"]::-ms-thumb {
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #505050;
+    border-radius: 10px;
+}
+
+input[type="range"]::-moz-range-track {
+    background: #505050;
+}
+
+input[type="range"]::-ms-track {
+    background: #505050;
+    border-radius: 10px;
+    height: 8px;
+}
+
+input[type="range"]::-moz-range-progress {
+    background: #ffffff;
+    border-radius: 10px;
+    height: 8px;
+}
+
+input[type="range"]::-ms-fill-lower {
+    background: #ffffff;
+    border-radius: 10px;
+    height: 8px;
+}
+
+input[type="range"]::-ms-fill-upper {
+    background: #505050; 
+}
+
+input[type="range"]:hover {
+    background: #505050; 
+}

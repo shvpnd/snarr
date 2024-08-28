@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snarr | Dashboard</title> 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/modal.css">
+    <link rel="stylesheet" href="style/pomodoro.css">
+    <link rel="stylesheet" href="style/layout.css">
+    <link rel="stylesheet" href="style/spotify.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
 </head>
 <body>
     <div class="loading-overlay">
-        <img src="logo_resp.png" alt="Loading..." class="loading-logo">
+        <div class="loading-overlay">
+            <img src="logo_resp.png" alt="Loading..." class="loading-logo">
+            <div class="loading-bar">
+                <div class="loading-progress" id="loadingProgress"></div>
+            </div>
+        </div>
     </div>
     <div class="content">
-        <!-- Your existing content goes here -->
         <img src="logo.png" alt="Logo" class="logo">
-        <div class="settings-icon" id="settingsIcon">⛭</div>
+        <div class="settings-icon" id="settingsIcon"><i class="fas fa-cog"></i></div> <!-- Settings icon -->
         <div class="pomodoro">
             <div id="timer" class="timer"> 
                 <span id="minutes">25</span>:<span id="seconds">00</span>
@@ -31,9 +40,9 @@
                 <div class="modal-sidebar">
                     <ul>
                         <li data-category="pomodoro">Pomodoro</li>
-                        <li data-category="theme">Theme</li>
                         <li data-category="sounds">Sounds</li>
                         <li data-category="music">Music</li>
+                        <li data-category="backgrounds">Backgrounds</li>
                         <li data-category="feedback">Feedback & Support</li>
                     </ul>
                 </div>
@@ -46,11 +55,7 @@
                         <label for="breakDuration">Break Duration (minutes):</label>
                         <input type="range" id="breakDuration" min="1" max="30" value="5" step="1">
                         <span id="breakValue">5 minutes</span>
-                    </div>
-                    <div class="settings-category" id="themes">
-                        <h3>Select Theme</h3>
-                        <p>Theme selection is currently disabled.</p>
-                    </div>
+                    </div>                  
                     <div class="settings-category" id="sounds" style="display: none;">
                         <strong>Sound Settings</strong>
                         <label for="soundVolume">Volume:</label>
@@ -59,17 +64,49 @@
                     <div class="settings-category" id="music" style="display: none;">
                         <strong>Music Settings</strong>
                         <p>Manage your music preferences here.</p>
+                        <label for="playlistLink">Spotify Playlist Link:</label>
+                        <input type="text" id="playlistLink" placeholder="Paste your Spotify playlist link here">
+                        <button id="updatePlaylist">Update Playlist</button>
+                    </div>
+                    <div class="settings-category" id="backgrounds" style="display: none;">
+                        <strong>Background Settings</strong>
+                        <div class="background-thumbnails">
+                            <img src="bg/image1.jpg" alt="Background 1" class="thumbnail" data-image="image1.jpg">
+                            <img src="bg/image2.jpg" alt="Background 2" class="thumbnail" data-image="image2.jpg">
+                            <img src="bg/image3.jpg" alt="Background 3" class="thumbnail" data-image="image3.jpg">
+                            <img src="bg/image4.jpg" alt="Background 4" class="thumbnail" data-image="image4.jpg">
+                            <img src="bg/image5.jpg" alt="Background 5" class="thumbnail" data-image="image5.jpg">
+                            <img src="bg/image6.jpg" alt="Background 6" class="thumbnail" data-image="image6.jpg">
+                            <img src="bg/image7.jpg" alt="Background 7" class="thumbnail" data-image="image7.jpg">
+                            <img src="bg/image8.jpg" alt="Background 8" class="thumbnail" data-image="image8.jpg">
+                            <img src="bg/image9.jpg" alt="Background 9" class="thumbnail" data-image="image9.jpg">
+                            <img src="bg/image10.jpg" alt="Background 10" class="thumbnail" data-image="image10.jpg">
+                            <img src="bg/image11.jpg" alt="Background 11" class="thumbnail" data-image="image11.jpg">
+                            <img src="bg/image12.jpg" alt="Background 12" class="thumbnail" data-image="image12.jpg">
+                            <img src="bg/image13.jpg" alt="Background 13" class="thumbnail" data-image="image13.jpg">
+                            <img src="bg/image14.jpg" alt="Background 14" class="thumbnail" data-image="image14.jpg">
+                            <img src="bg/image15.jpg" alt="Background 15" class="thumbnail" data-image="image15.jpg">
+                            <img src="bg/image16.jpg" alt="Background 16" class="thumbnail" data-image="image16.jpg">
+                            <img src="bg/image17.jpg" alt="Background 17" class="thumbnail" data-image="image17.jpg">
+                            <img src="bg/image18.jpg" alt="Background 18" class="thumbnail" data-image="image18.jpg">
+                            <img src="bg/image19.jpg" alt="Background 19" class="thumbnail" data-image="image19.jpg">
+                            <img src="bg/image20.jpg" alt="Background 20" class="thumbnail" data-image="image20.jpg">
+                            <img src="bg/image21.jpg" alt="Background 21" class="thumbnail" data-image="image21.jpg">
+                            <img src="bg/image22.jpg" alt="Background 22" class="thumbnail" data-image="image22.jpg">
+                        </div>
                     </div>
                     <div class="settings-category" id="feedback" style="display: none;">
                         <strong>Feedback & Support</strong>
                         <p>Contact us for support or feedback.</p>
                     </div>
                 </div>
-            </div>               
+            </div>
         </div>
+        <div class="fullscreen-icon" id="fullscreenIcon"><i class="fas fa-expand"></i></div> <!-- Fullscreen icon -->
         <script src="script/main.js"></script>
         <script src="script/pomodoro.js"></script>
+        <script src="script/modal.js"></script>
+        <script src="script/spotify.js"></script>
     </div>
 </body>
-
 </html>

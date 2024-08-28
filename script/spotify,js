@@ -1,0 +1,32 @@
+// spotify.js
+function initializeSpotify() {
+    const spotifyIframe = document.querySelector('.spotify-widget iframe');
+    const playlistLinkInput = document.getElementById('playlistLink');
+    const updatePlaylistButton = document.getElementById('updatePlaylist');
+
+    // Add event listener to the update button
+    updatePlaylistButton.addEventListener('click', () => {
+        updateSpotifyPlaylist(spotifyIframe, playlistLinkInput);
+    });
+}
+
+// Function to update the Spotify playlist
+function updateSpotifyPlaylist(spotifyIframe, playlistLinkInput) {
+    const playlistLink = playlistLinkInput.value.trim();
+    if (playlistLink) {
+        // Extract the playlist ID from the link
+        const playlistIdMatch = playlistLink.match(/playlist\/([a-zA-Z0-9]+)/);
+        if (playlistIdMatch) {
+            const playlistId = playlistIdMatch[1];
+            // Update the iframe source
+            spotifyIframe.src = `https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator&theme=black`;
+        } else {
+            alert('Please enter a valid Spotify playlist link.');
+        }
+    } else {
+        alert('Please enter a playlist link.');
+    }
+}
+
+// Initialize Spotify functionality on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', initializeSpotify);

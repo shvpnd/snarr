@@ -1,17 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Existing code...
-
-    // Hide loading overlay and show content
     const loadingOverlay = document.querySelector('.loading-overlay');
     const content = document.querySelector('.content');
-    
-    loadingOverlay.style.display = 'none'; // Hide loading overlay
-    content.style.display = 'block'; // Show main content
+    const loadingProgress = document.getElementById('loadingProgress');
 
-    // Existing code...
-});
+    // Function to simulate loading progress
+    function simulateLoading() {
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += 10; // Increase progress by 10%
+            loadingProgress.style.width = `${progress}%`;
 
-document.addEventListener('DOMContentLoaded', () => {
+            if (progress >= 100) {
+                clearInterval(interval);
+                setTimeout(() => {
+                    loadingOverlay.style.display = 'none'; // Hide loading overlay
+                    content.style.display = 'block'; // Show main content
+                }, 500); // Short delay before showing content
+            }
+        }, 300); // Update every 300ms
+    }
+
+    // Start the loading simulation
+    simulateLoading();
+
+    // Ensure the loading screen is shown for at least 5 seconds
+    setTimeout(() => {
+        if (loadingOverlay.style.display !== 'none') {
+            loadingOverlay.style.display = 'none'; // Hide loading overlay
+            content.style.display = 'block'; // Show main content
+        }
+    }, 5000); // 5 seconds
+
+    // Settings modal functionality
     const elements = {
         settingsIcon: document.getElementById('settingsIcon'),
         settingsModal: document.getElementById('settingsModal'),
@@ -24,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function setRandomBackground() {
         const totalImages = 22; // Adjust this to the total number of images you have
         const randomIndex = Math.floor(Math.random() * totalImages) + 1; // Random index from 1 to totalImages
-        const backgroundImage = `url('../bg/image${randomIndex}.jpg')`; // Adjust the image format if necessary
+        const backgroundImage = `url('bg/image${randomIndex}.jpg')`; // Adjust the image format if necessary
         document.body.style.backgroundImage = backgroundImage;
     }
 
@@ -58,5 +78,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Add this code to handle background image changes
+    function changeBackgroundImage(imageName) {
+        const backgroundImage = `url('bg/${imageName}')`;
+        document.body.style.backgroundImage = backgroundImage;
+    }
+
+    // Add event listeners to the thumbnails
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', () => {
+            const imageName = thumbnail.getAttribute('data-image');
+            changeBackgroundImage(imageName);
+        });
+    });
+
     document.querySelector('.modal-sidebar li[data-category="pomodoro"]').click();
+});
+
+// Assuming you have a script file where you handle modal interactions
+document.addEventListener('DOMContentLoaded', function() {
+    const categoryItems = document.querySelectorAll('.modal-sidebar li');
+
+    categoryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // Remove 'selected' class from all items
+            categoryItems.forEach(i => i.classList.remove('selected'));
+            // Add 'selected' class to the clicked item
+            this.classList.add('selected');
+        });
+    });
 });

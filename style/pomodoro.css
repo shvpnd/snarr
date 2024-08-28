@@ -1,0 +1,38 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start fully transparent */
+    }
+    to {
+        opacity: 1; /* End fully opaque */
+    }
+}
+
+.pomodoro {
+    width: 90%;
+    max-width: 600px; 
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 1s ease-in; /* Apply the fade-in animation */
+}
+
+.timer {
+    font-family: 'Bold', sans-serif;
+    font-size: 150px;
+    font-weight: bold;
+    margin-bottom: 0px; /* Reduced margin to decrease gap */
+    cursor: pointer;
+}
+
+.controls button {
+    padding: 12px 40px;
+    margin: 0px 0; /* Adjusted margin to reduce gap */
+    border: none;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    font-family: "Medium";
+    cursor: pointer;
+    font-size: 16px;
+}
