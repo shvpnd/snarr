@@ -11,3 +11,17 @@
     transform-origin: bottom left; 
     user-select: none; /* Non-selectable text */
 }
+
+#updatePlaylist{
+    padding: 4px 6px;
+    margin: 0px 0; /* Adjusted margin to reduce gap */
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    font-family: "Medium";
+    cursor: pointer;
+    font-size: 14px;
+}
+

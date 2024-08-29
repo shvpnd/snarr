@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="spotify-widget">
-            <iframe style="border-radius:15px" src="https://open.spotify.com/embed/playlist/1xVQZjNBLeHGCLfT3Ngfrk?utm_source=generator&theme=black" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO2fAoGH?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
         <div class="modal" id="settingsModal">
             <div class="modal-content">
@@ -66,8 +66,10 @@
                         <p>Manage your music preferences here.</p>
                         <label for="playlistLink">Spotify Playlist Link:</label>
                         <input type="text" id="playlistLink" placeholder="Paste your Spotify playlist link here">
-                        <button id="updatePlaylist">Update Playlist</button>
+                        <button id="updatePlaylist">Save</button>
+                        <div id="feedbackMessage" style="margin-top: 10px;"></div> <!-- Added feedback message element -->
                     </div>
+                    
                     <div class="settings-category" id="backgrounds" style="display: none;">
                         <strong>Background Settings</strong>
                         <div class="background-thumbnails">

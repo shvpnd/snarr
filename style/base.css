@@ -47,3 +47,15 @@ body::before {
     background-color: rgba(0, 0, 0, 0.123); /* Adjust the alpha value for dimming */
     z-index: 0; /* Ensure it is below all other content */
 }
+
+input[type="text"] {
+    width: 70%;
+    padding: 4px 10px;
+    border: 0px;
+    border-radius: 7px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.35);
+    font-family: "Medium";
+    font-size: 14px;
+    color: #ffffff; /* Text color */
+}
